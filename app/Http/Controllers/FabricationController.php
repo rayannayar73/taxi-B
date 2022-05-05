@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\DB;
 class FabricationController extends Controller
 {
     public function form(){
-        $liste = DB::table('produitFini')->get();
+        $liste = DB::table('produitfini')->get();
         return view('fabrication',['liste'=>$liste]);
     }
 
@@ -16,18 +16,18 @@ class FabricationController extends Controller
         $id = $request->input('id');
         $quantite = $request->input('quantite');
 
-        DB::table('fabrication')->insert([
-            'idProduit' => $id,
-            'quantite' => $quantite
+        DB::table('stockproduitfini')->insert([
+            'idproduit' => $id,
+            'entree' => $quantite
         ]);
 
         $formule = DB::table('formule')
-        ->where('idProduit','=',$id)
+        ->where('idproduit','=',$id)
         ->get();
 
         foreach($formule as $insertion){
             DB::table('stock')->insert([
-                'idMatiere' => $insertion->idMatiere,
+                'idmatiere' => $insertion->idmatiere,
                 'sortie' => $this->regleDeTrois($quantite,$insertion->pourcentage)
             ]);
         }

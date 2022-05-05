@@ -9,12 +9,12 @@ class StockController extends Controller
 {
     //
     public function matieres(){
-        $liste = DB::table('listeStock')->get();
+        $liste = DB::table('listestock')->get();
         return view('stock',['liste'=>$liste]);
     }
     
     public function produits(){
-        $liste = DB::table('listeStockProduitFini')->get();
+        $liste = DB::table('listestockproduitfini')->get();
         return view('stockProduit',['liste'=>$liste]);
     }
 

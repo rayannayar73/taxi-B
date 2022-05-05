@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 class AchatController extends Controller
 {
     //
+    
     public function index(){
         return view('achat');
     }
@@ -21,7 +22,7 @@ class AchatController extends Controller
         $id = $request->input('id');
         $quantite = $request->input('quantite');
         DB::table('stock')->insert([
-            'idMatiere' => $id,
+            'idmatiere' => $id,
             'entree' => $quantite
         ]);
         return $this->achat();
