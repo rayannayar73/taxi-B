@@ -22,7 +22,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('img/apple-icon.png') }}">
   <link rel="icon" type="image/png" href="{{ asset('img/favicon.png') }}">
   <title>
-    Socolait Madagascar
+  EVALUATION STAGE
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" />
@@ -37,7 +37,7 @@
 
 <body class="">
   <div class="wrapper">
-    @include('partials.sidebar')
+    <?php  if(session('admin')->admin==true) {?> @include('partials.adminsidebar') <?php } else { ?> @include('partials.sidebar')<?php }?>  
     <div class="main-panel">
       <!-- Navbar -->
       <nav class="navbar navbar-expand-lg navbar-absolute navbar-transparent">
@@ -64,7 +64,7 @@
                 </button>
               </li>
               <li class="dropdown nav-item">
-                <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                <a href="" class="dropdown-toggle nav-link" data-toggle="dropdown">
                   <div class="photo">
                     <img src="{{ asset('img/anime3.png')}}" alt="Profile Photo">
                   </div>
@@ -74,7 +74,7 @@
                   </p>
                 </a>
                 <ul class="dropdown-menu dropdown-navbar">
-                  <li class="nav-link"><a href="javascript:void(0)" class="nav-item dropdown-item">Log out</a></li>
+                  <li class="nav-link"><a href="{{ route('logout') }}" class="nav-item dropdown-item">Log out</a></li>
                 </ul>
               </li>
               <li class="separator d-lg-none"></li>

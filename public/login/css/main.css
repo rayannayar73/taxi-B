@@ -1,0 +1,53 @@
+body{
+    background-color: #f0f2f5;
+}
+.menu{
+    width:500px;
+    height:600px;
+    margin:0 auto;
+    background-color: #e9ebee;
+}
+.inputT{
+    display:flex;
+    border: 0px solid  ;
+    display:block;
+    border-radius:10px 10px 10px 10px;
+    width:300px;
+    height:35px ;
+}
+.image{
+    padding:0px 50px 0px 50px;
+    background-color: white;
+}
+.boutton{
+    display:flex;
+    border: 0px solid  ;
+    display:block;
+    border-radius:10px 10px 10px 10px;
+    width:300px ;
+    height:40px ;    
+}
+#logIn{
+    background-color: #0799e8;
+}
+#logIn:hover{
+    background-color: rgba(223, 28, 148, 0.904);
+}
+#creer{
+    background-color:rgb(37, 192, 37) ;
+}
+#creer:hover{
+    background-color:hsl(27, 100%, 48%);    
+}
+
+ 
+.soratra{
+    display: block;
+    padding: 50px 90px ;
+}
+.footer{
+	margin:0 auto;
+    text-align:center;
+    color: #0799e8;
+    font-size:small;
+}

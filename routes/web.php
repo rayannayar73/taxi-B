@@ -3,7 +3,13 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AchatController;
 use App\Http\Controllers\StockController;
+use App\Http\Controllers\TrajetController;
+use App\Http\Controllers\EcheanceController;
+use App\Http\Controllers\VehiculeController;
 use App\Http\Controllers\FabricationController;
+use App\Http\Controllers\MaintenanceController;
+use App\Http\Controllers\UtilisateurController;
+use App\Http\Controllers\TypeEcheanceController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,17 +21,24 @@ use App\Http\Controllers\FabricationController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [UtilisateurController::class, 'index'])->name('login');
+Route::get('/login/valider', [UtilisateurController::class, 'valider'])->name('login.valider');
+Route::get('/logout', [UtilisateurController::class, 'deconnexion'])->name('logout');
 
-Route::get('/stock/matiere1ere', [StockController::class, 'matieres'])->name('matieres');
-Route::get('/stock', [StockController::class, 'courses'])->name('courses');
+Route::get('/vehicules', [VehiculeController::class, 'index'])->name('vehicules');
+Route::get('/vehicule/fiche/{id}', [VehiculeController::class, 'fiche']);
+Route::get('/vehicule/disponibles', [VehiculeController::class, 'disponibles'])->name('vehicule.disponibles');
+Route::get('/vehicule/form', [VehiculeController::class, 'form'])->name('vehicule.form');
+Route::get('/vehicule/valider', [VehiculeController::class, 'valider'])->name('vehicule.valider');
+Route::get('/vehicule/export/{id}', [VehiculeController::class, 'export']);
 
-Route::get('/stock/produits', [StockController::class, 'produits'])->name('produits');
+Route::get('/trajet/form', [TrajetController::class, 'form'])->name('trajet.form');
+Route::get('/trajet/arriver', [TrajetController::class, 'validerArriver'])->name('trajet.arriver');
+Route::get('/trajet/depart', [TrajetController::class, 'validerDepart'])->name('trajet.depart');
+Route::get('/trajet/carburant', [TrajetController::class, 'validerCarburant'])->name('trajet.carburant');
 
-Route::get('/achat/form', [AchatController::class, 'achat'])->name('achat.liste');
-Route::get('/achat/submit', [AchatController::class, 'valider'])->name('achat.valider');
+Route::get('/echeance/form', [EcheanceController::class, 'form'])->name('echeance.form');
+Route::get('/echeance/valider', [EcheanceController::class, 'valider'])->name('echeance.valider');
 
-Route::get('/fabrication/form', [FabricationController::class, 'form'])->name('fabrication');
-Route::get('/fabrication/submit', [FabricationController::class, 'valider'])->name('fabrication.valider');
+Route::get('/maintenance/form', [MaintenanceController::class, 'form'])->name('maintenance.form');
+Route::get('/maintenance/valider', [MaintenanceController::class, 'valider'])->name('maintenance.valider');

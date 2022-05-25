@@ -5,39 +5,26 @@
       <div class="sidebar-wrapper" >
         <div class="logo">
           <a href="#" class="simple-text logo-normal">
-            Socolait
+            Evaluation Stage
           </a>
         </div>
         <ul class="nav">
           <li>
-            <a href="{{ route('achat.liste') }}">
-              <i class="tim-icons icon-bag-16"></i>
-              <p>Achat</p>
+            <a href="{{ route('vehicules') }}">
+              <i class="tim-icons icon-bus-front-12"></i>
+              <p>Vehicule</p>
             </a>
           </li>
           <li>
-            <a href="{{ route('matieres') }}">
-              <i class="tim-icons icon-coins"></i>
-              <p>Stock matières 1ere</p>
+            <a href="{{ route('trajet.form') }}">
+              <i class="tim-icons icon-map-big"></i>
+              <p>Trajet</p>
             </a>
           </li>
           <li>
-            <a href="{{ route('courses') }}">
-              <i class="tim-icons icon-cart"></i>
-              <p>Courses</p>
-            </a>
-          </li>
-          <li>
-            <a href="{{ route('fabrication') }}">
-              <i class="tim-icons icon-molecule-40"></i>
-              <p>Fabrication</p>
-            </a>
-          </li>
-          
-          <li>
-            <a href="{{ route('produits') }}">
-              <i class="tim-icons icon-coins"></i>
-              <p>Stock produits Finis</p>
+            <a href="{{ route('echeance.form') }}">
+              <i class="tim-icons icon-settings"></i>
+              <p>Echeances</p>
             </a>
           </li>
         </ul>
