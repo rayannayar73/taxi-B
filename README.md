@@ -1,4 +1,5 @@
 # taxi-b
+## laravel - mysql
 Pour faciliter la gestion de ses différents véhicules, une entreprise a décidé de mettre en
 place une application informatique.
 #### Méthode MVC appliqué.
