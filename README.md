@@ -3,7 +3,7 @@
 Pour faciliter la gestion de ses différents véhicules, une entreprise a décidé de mettre en
 place une application informatique.
 #### Méthode MVC appliqué.
-
+#### Durée de réalisatoion: 3jours
 ### Dans cette application, on pourra gérer :
 <ul>
     <li>Le carnet de bord de chaque véhicule
